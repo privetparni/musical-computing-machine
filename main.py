@@ -1,8 +1,9 @@
 import re
 import telebot
 import wikipedia
+from base64 import b64decode
 
-
+from selenium import webdriver
 token = '5150315371:AAFN9lYdkvvRm939u5Wgu0zh7qeRj9qCV8o'
 
 bot = telebot.TeleBot(token)
@@ -26,6 +27,7 @@ def fwiki(s):
         wikitext2 = re.sub('\([^()]*\)', '', wikitext2)
         wikitext2 = re.sub('\{[^\{\}]*\}', '', wikitext2)
         return wikitext2
+
     except Exception as e:
         return 'В энциклопедии нет информации об этом'
 
@@ -38,6 +40,11 @@ def start(m, res=False):
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     bot.send_message(message.chat.id, fwiki(message.text))
+
+    key = message.text
+    img = f'https://www.google.ru/search?q={key}&newwindow=1&espv=2&source=lnms&tbm=isch&sa=X'
+
+    bot.send_photo(message.chat.id, img)
 
 
 bot.polling(none_stop=True, interval=0)
