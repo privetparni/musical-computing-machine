@@ -37,6 +37,7 @@ def start(m, res=False):
 
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
+    bot.send_message(message.chat.id, 'Вот то, что мне удалось найти:')
     bot.send_message(message.chat.id, fwiki(message.text))
     wikikey1 = message.text
     wikikey = f'https://ru.wikipedia.org/wiki/{wikikey1}'
@@ -44,7 +45,7 @@ def handle_text(message):
     #key = message.text
     #img = f'http://kraski-zhizni.com/wp-content/uploads/2020/06/IMG_4418.jpeg'
     # НЕ РАБОТАЕТ
-    bot.send_photo(message.chat.id, wikikey)
+    bot.send_message(message.chat.id, f'https://ru.wikipedia.org/wiki/{wikikey1}')
 
 
 bot.polling(none_stop=True, interval=0)
