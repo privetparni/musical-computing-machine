@@ -1,9 +1,7 @@
 import re
 import telebot
 import wikipedia
-from base64 import b64decode
 
-from selenium import webdriver
 token = '5150315371:AAFN9lYdkvvRm939u5Wgu0zh7qeRj9qCV8o'
 
 bot = telebot.TeleBot(token)
@@ -40,11 +38,13 @@ def start(m, res=False):
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     bot.send_message(message.chat.id, fwiki(message.text))
-
-    key = message.text
-    img = f'https://www.google.ru/search?q={key}&newwindow=1&espv=2&source=lnms&tbm=isch&sa=X'
-
-    bot.send_photo(message.chat.id, img)
+    wikikey1 = message.text
+    wikikey = f'https://ru.wikipedia.org/wiki/{wikikey1}'
+    # не работает
+    #key = message.text
+    #img = f'http://kraski-zhizni.com/wp-content/uploads/2020/06/IMG_4418.jpeg'
+    # НЕ РАБОТАЕТ
+    bot.send_photo(message.chat.id, wikikey)
 
 
 bot.polling(none_stop=True, interval=0)
