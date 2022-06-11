@@ -6,6 +6,7 @@ from NEWCLESSES.qwstmh import QWSTMH
 from NEWCLESSES.cartriges import CARTRIGES
 from NEWCLESSES.othercommands import commands
 
+# all needed imports
 token = '5150315371:AAFN9lYdkvvRm939u5Wgu0zh7qeRj9qCV8o'
 wikipedia.set_lang('ru')
 q, a1, a2, a3, a4, a5, a, b, c = 0, 0, 0, 0, 0, 0, 0, 0, 0
@@ -13,6 +14,10 @@ nass = {}
 bot = telebot.TeleBot(token)
 
 
+# for telegramm
+
+
+# only for better experience of using bot
 @bot.message_handler(commands=["start"])
 def start(m):
     commands.start(m)
@@ -23,6 +28,7 @@ def menu(m):
     commands.menu(m)
 
 
+# only for better experience of using bot
 @bot.message_handler(commands=["who_wants_to_become_a_millionaire"])
 def start_who_wants_to_become_a_millionaire(m):
     commands.start_new(m)
@@ -38,6 +44,9 @@ def start_russian_roulette(m):
     commands.start_new3(m)
 
 
+# 3 main games
+# HERE ALL COMMANDS FOR 'who_wants_to_become_a_millionaire'
+# but 'not_now' for all of games
 @bot.message_handler(commands=["not_now"])
 def no(m):
     commands.no(m)
@@ -78,11 +87,13 @@ def ssqwstw7(m):
     QWSTW.qwstw7(m)
 
 
+# i use 'strange' command like '/tea' because i cant imagine other ways how to do it ^-^
 @bot.message_handler(commands=["iPhone"])
 def sswina1(m):
     QWSTW.wina1(m)
 
 
+# also, there are many commands to lose game, only if your answer were wrong
 @bot.message_handler(
     commands=["lose", 'Gorbachev', 'Lenin', 'Stalin', 'eight', 'twelve', 'six', 'China-India', 'France-Ukraine ',
               'USA-Germany', 'nine', 'four', 'three', 'kg_of_cotton', 'kg_of_metal', 'water', 'coffee', 'coca-cola',
@@ -91,11 +102,13 @@ def sslosea1(m):
     QWSTW.losea1(m)
 
 
+# HERE ALL COMMANDS FOR 'math quiz'
 @bot.message_handler(commands=["lets_go"])
 def qwstm(m):
     commands.qwstm(m)
 
 
+# You can change complexity ^-^
 @bot.message_handler(commands=["easy"])
 def ssqwstme1(m):
     QWSTME.qwstme1(m)
@@ -175,6 +188,8 @@ def sslosea3(m):
     QWSTMH.losea3(m)
 
 
+# Also there are 'extra mode', where you can solve equations, but they often are unsolvable(
+
 @bot.message_handler(commands=["extra_mode"])
 def extra_mode(m):
     commands.extra_mode(m)
@@ -195,6 +210,7 @@ def extra_mode_answer(m):
     commands.extra_mode_answer(m)
 
 
+# HERE ALL COMMANDS FOR 'russian roulette'
 @bot.message_handler(commands=["ok"])
 def rr(m):
     commands.rr(m)
@@ -225,6 +241,8 @@ def ssrr5c(m):
     CARTRIGES.rr5c(m)
 
 
+# several commands just for fun
+
 @bot.message_handler(commands=["let_me_cry"])
 def let_me_cry(m):
     commands.let_me_cry(m)
@@ -235,6 +253,7 @@ def bravo(m):
     commands.bravo(m)
 
 
+# so that it does not interfere, you can search for words only when you have entered the word search mode
 @bot.message_handler(commands=["word_search"])
 def search(m):
     commands.search(m)
