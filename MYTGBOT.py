@@ -1,5 +1,4 @@
-from telebot import types
-import random, re, json, telebot, wikipedia, time, math
+import telebot, wikipedia
 from NEWCLESSES.qwstw1 import QWSTW
 from NEWCLESSES.qwstme import QWSTME
 from NEWCLESSES.qwstmh import QWSTMH
@@ -57,7 +56,7 @@ def ssqwstw1(m):
     QWSTW.qwstw1(m)
 
 
-@bot.message_handler(commands=["Putin"])
+@bot.message_handler(commands=["Yeltsin"])
 def ssqwstw2(m):
     QWSTW.qwstw2(m)
 
@@ -95,7 +94,7 @@ def sswina1(m):
 
 # also, there are many commands to lose game, only if your answer were wrong
 @bot.message_handler(
-    commands=["lose", 'Gorbachev', 'Lenin', 'Stalin', 'eight', 'twelve', 'six', 'China-India', 'France-Ukraine ',
+    commands=["lose", 'Gorbachev', 'Lenin', 'Putin', 'eight', 'twelve', 'six', 'China-India', 'France-Ukraine ',
               'USA-Germany', 'nine', 'four', 'three', 'kg_of_cotton', 'kg_of_metal', 'water', 'coffee', 'coca-cola',
               'Cars', 'PlayStation', 'rubiks_cube'])
 def sslosea1(m):
@@ -113,6 +112,8 @@ def qwstm(m):
 def ssqwstme1(m):
     QWSTME.qwstme1(m)
 
+
+# to know more open qwstme
 
 @bot.message_handler(commands=["a*a+b*b=c*c"])
 def ssqwstme2(m):
@@ -139,10 +140,13 @@ def sswin_a2(m):
     QWSTME.win_a2(m)
 
 
+# now hard mode
 @bot.message_handler(commands=["hard"])
 def ssqwstmh1(m):
     QWSTMH.qwstmh1(m)
 
+
+# to know more open qwstmh
 
 @bot.message_handler(commands=["-1"])
 def ssqwstmh2(m):
@@ -213,8 +217,10 @@ def extra_mode_answer(m):
 # HERE ALL COMMANDS FOR 'russian roulette'
 @bot.message_handler(commands=["ok"])
 def rr(m):
-    commands.rr(m)
+    CARTRIGES.rr(m)
 
+
+# to know more open cartriges.py
 
 @bot.message_handler(commands=["1_cartridge"])
 def ssrr1c(m):

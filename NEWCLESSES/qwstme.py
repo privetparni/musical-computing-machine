@@ -1,5 +1,5 @@
 from telebot import types
-import random, re, json, telebot, wikipedia, time, math
+import telebot, time
 
 token = '5150315371:AAFN9lYdkvvRm939u5Wgu0zh7qeRj9qCV8o'
 q, a1, a2, a3, a4, a5, a, b, c = 0, 0, 0, 0, 0, 0, 0, 0, 0
@@ -7,6 +7,7 @@ nass = {}
 bot = telebot.TeleBot(token)
 
 
+# here are commands for easy mode in 'math quiz'
 class QWSTME:
     def qwstme1(m):
         global a2

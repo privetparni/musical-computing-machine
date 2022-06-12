@@ -1,5 +1,5 @@
 from telebot import types
-import random, re, json, telebot, wikipedia, time, math
+import telebot, time
 
 token = '5150315371:AAFN9lYdkvvRm939u5Wgu0zh7qeRj9qCV8o'
 q, a1, a2, a3, a4, a5, a, b, c = 0, 0, 0, 0, 0, 0, 0, 0, 0
@@ -7,6 +7,7 @@ nass = {}
 bot = telebot.TeleBot(token)
 
 
+# here are commands for 'who_wants_to_become_a_millionaire'
 class QWSTW:
     def qwstw1(m):
         global a1
@@ -15,9 +16,9 @@ class QWSTW:
             time.sleep(0.25)
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             item1 = types.KeyboardButton("/Gorbachev")
-            item2 = types.KeyboardButton("/Putin")
+            item2 = types.KeyboardButton("/Yeltsin")
             item3 = types.KeyboardButton("/Lenin")
-            item4 = types.KeyboardButton("/Stalin")
+            item4 = types.KeyboardButton("/Putin")
             markup.add(item1)
             markup.add(item2)
             markup.add(item3)
